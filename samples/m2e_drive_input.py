@@ -22,13 +22,14 @@ def main():
     assert right_motor.connected
 
     for k in range(3):
-        sp = int(input("k = " + k + " - Enter a speed (0 to 900 dps): "))
+        sp = int(input(str(k) + ". Enter a speed (0 to 900 dps): "))
         time_s = float(input("Enter a time to drive (seconds): "))
         left_motor.run_forever(speed_sp=sp)
         right_motor.run_forever(speed_sp=sp)
         time.sleep(time_s)
         left_motor.stop()
         right_motor.stop()
+    print("Goodbye")
     ev3.Sound.speak("Goodbye").wait()
 
 
